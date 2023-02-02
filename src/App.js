@@ -61,8 +61,8 @@ function App() {
         <button className='
           w-full 
           p-4 rounded-3xl 
-          bg-gray-100 
-          text-gray-400 
+          bg-gray-300 
+          text-gray-500 
           text-lg 
           hover:bg-gradient-to-r 
           hover:from-sky-400 

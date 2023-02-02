@@ -4,19 +4,23 @@ function ToggleFinger({ fingerUpdate }) {
 
   const [fingerPart, setFingerPart] = useState([
     {
-      name: 'dip',
+      name: 'DIP',
+      id: 'dip',
       active: false,
     },
     {
-      name: 'pip',
+      name: 'PIP',
+      id: 'pip',
       active: false,
     },
     {
-      name: 'mip',
+      name: 'MIP',
+      id: 'mip',
       active: false,
     },
     {
-      name: 'all-finger',
+      name: 'Other',
+      id: 'all-finger',
       active: false,
     },
   ]);
@@ -25,14 +29,14 @@ function ToggleFinger({ fingerUpdate }) {
     const button_id = e.currentTarget.id;
     let temp = [...fingerPart];
     temp.forEach(function(item) {
-      if (item.name === button_id) {
+      if (item.id === button_id) {
         item.active = true;
+        fingerUpdate(item.name);
       } else {
         item.active = false;
       }
     })
     setFingerPart(temp);
-    fingerUpdate(button_id);
   }
 
   return (

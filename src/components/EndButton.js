@@ -15,7 +15,7 @@ function EndButton({ progressClick }) {
       hover:text-white
       transition ease-in-out duration-50'
         onClick={progressClick}>
-        แก้ไขตัวเลือก
+        ทำใหม่อีกครั้ง
       </button>
     </div>
   )

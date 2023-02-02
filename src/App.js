@@ -70,18 +70,24 @@ function App() {
       <div className={`${(msgToggle) ? 'visible' : 'hidden'}`}>
         <Message closeMsg={closeMsg} />
       </div>
-      <div className={`my-auto ${(currentStage === 1) ? 'visible' : 'hidden'}`}>
-        <ToggleAbs absUpdate={absUpdate} />
-        <NextButton progressClick={progressClick} />
-      </div>
-      <div className={`my-auto ${(currentStage === 2) ? 'visible' : 'hidden'}`}>
-        <ToggleFinger fingerUpdate={fingerUpdate} />
-        <NextButton progressClick={progressClick} />
-      </div>
-      <div className={`my-auto ${(currentStage === 3) ? 'visible' : 'hidden'}`}>
-        <Ending />
-        <EndButton progressClick={progressClick} />
-      </div>
+      {(currentStage === 1) && (
+        <div className='my-auto'>
+          <ToggleAbs absUpdate={absUpdate} />
+          <NextButton progressClick={progressClick} />
+        </div>
+      )}
+      {(currentStage === 2) && (
+        <div className='my-auto'>
+          <ToggleFinger fingerUpdate={fingerUpdate} />
+          <NextButton progressClick={progressClick} />
+        </div>
+      )}
+      {(currentStage === 3) && (
+        <div className='my-auto'>
+          <Ending />
+          <EndButton progressClick={progressClick} />
+        </div>
+      )}
     </div>
   );
 }

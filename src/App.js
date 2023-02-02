@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import ToggleAbs from './components/ToggleAbs';
 import ToggleFinger from './components/ToggleFinger';
 import Ending from './components/Ending';
+import NextButton from './components/NextButton';
+import EndButton from './components/EndButton';
 
 function App() {
 
@@ -65,13 +67,22 @@ function App() {
         </p>
       )}
       {(currentStage === 1) && (
-        <ToggleAbs absUpdate={absUpdate} progressClick={progressClick} />
+        <div className='my-auto'>
+        <ToggleAbs absUpdate={absUpdate} />
+        <NextButton progressClick={progressClick} />
+        </div>
       )}
       {(currentStage === 2) && (
-        <ToggleFinger fingerUpdate={fingerUpdate} progressClick={progressClick} />
+        <div className='my-auto'>
+        <ToggleFinger fingerUpdate={fingerUpdate} />
+        <NextButton progressClick={progressClick} />
+        </div>
       )}
       {(currentStage === 3) && (
-        <Ending progressClick={progressClick} />
+        <div className='my-auto'>
+        <Ending />
+        <EndButton progressClick={progressClick} />
+        </div>
       )}
     </div>
   );

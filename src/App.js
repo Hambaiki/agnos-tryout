@@ -61,29 +61,21 @@ function App() {
 
   return (
     <div className='flex flex-col h-screen font-face-kn bg-slate-50'>
-      {(msgToggle) && (
-        <p className="text-center mt-4 text-sm text-red-500">
-          จำเป็นต้องเลือกอย่างน้อยหนึ่งตัวเลือก
-        </p>
-      )}
-      {(currentStage === 1) && (
-        <div className='my-auto'>
+      <p className={`text-center mt-4 text-sm text-red-500 ${(msgToggle) ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        จำเป็นต้องเลือกอย่างน้อยหนึ่งตัวเลือก
+      </p>
+      <div className={`my-auto ${(currentStage === 1) ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <ToggleAbs absUpdate={absUpdate} />
         <NextButton progressClick={progressClick} />
-        </div>
-      )}
-      {(currentStage === 2) && (
-        <div className='my-auto'>
+      </div>
+      <div className={`my-auto ${(currentStage === 2) ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <ToggleFinger fingerUpdate={fingerUpdate} />
         <NextButton progressClick={progressClick} />
-        </div>
-      )}
-      {(currentStage === 3) && (
-        <div className='my-auto'>
+      </div>
+      <div className={`my-auto ${(currentStage === 3) ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <Ending />
         <EndButton progressClick={progressClick} />
-        </div>
-      )}
+      </div>
     </div>
   );
 }

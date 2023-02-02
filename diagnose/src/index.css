@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "KanitRegular";
+    src: local("KanitRegular"),
+     url("./fonts/Kanit-Regular.ttf") format("truetype");
+    font-weight: regular;
+    }

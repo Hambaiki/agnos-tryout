@@ -40,7 +40,7 @@ function ToggleFinger({ fingerUpdate }) {
   }
 
   return (
-    <div className="container w-3/5 m-auto mb-4 pb-4 max-w-sm shadow-xl rounded-3xl">
+    <div className="container w-3/5 m-auto mb-4 pb-4 max-w-sm shadow-xl rounded-3xl bg-white">
       <p className="m-4 mt-8 text-center text-lg text-slate-500">
         จุดไหนที่คุณปวดนิ้วมากที่สุด?
       </p>

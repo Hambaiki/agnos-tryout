@@ -61,7 +61,7 @@ function ToggleAbs({ absUpdate }) {
   }
 
   return (
-    <div className="container w-3/5 m-auto mb-4 pb-1 max-w-sm shadow-xl rounded-3xl">
+    <div className="container w-3/5 m-auto mb-4 pb-1 max-w-sm shadow-xl rounded-3xl bg-white">
       <p className="m-4 mt-8 text-center text-lg text-slate-500">
         คุณปวดท้องที่บริเวณใดมากที่สุด?
       </p>

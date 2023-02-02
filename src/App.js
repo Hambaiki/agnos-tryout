@@ -5,6 +5,7 @@ import ToggleFinger from './components/ToggleFinger';
 import Ending from './components/Ending';
 import NextButton from './components/NextButton';
 import EndButton from './components/EndButton';
+import Message from './components/Message';
 
 function App() {
 
@@ -53,6 +54,10 @@ function App() {
     setMsgToggle(false);
     setCurrentStage(currentStage + 1);
   }
+  
+  function closeMsg() {
+    setMsgToggle(false);
+  }
 
   const [currentStage, setCurrentStage] = useState(1);
   const [selectedAbs, setSelectedAbs] = useState(null);
@@ -61,18 +66,18 @@ function App() {
 
   return (
     <div className='flex flex-col h-screen font-face-kn bg-slate-50'>
-      <p className={`text-center mt-4 text-sm text-red-500 ${(msgToggle) ? 'opacity-100' : 'opacity-0 hidden'}`}>
-        จำเป็นต้องเลือกอย่างน้อยหนึ่งตัวเลือก
-      </p>
-      <div className={`my-auto ${(currentStage === 1) ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <div className={`${(msgToggle) ? 'visible' : 'hidden'}`}>
+        <Message closeMsg={closeMsg} />
+      </div>
+      <div className={`my-auto ${(currentStage === 1) ? 'visible' : 'hidden'}`}>
         <ToggleAbs absUpdate={absUpdate} />
         <NextButton progressClick={progressClick} />
       </div>
-      <div className={`my-auto ${(currentStage === 2) ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <div className={`my-auto ${(currentStage === 2) ? 'visible' : 'hidden'}`}>
         <ToggleFinger fingerUpdate={fingerUpdate} />
         <NextButton progressClick={progressClick} />
       </div>
-      <div className={`my-auto ${(currentStage === 3) ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <div className={`my-auto ${(currentStage === 3) ? 'visible' : 'hidden'}`}>
         <Ending />
         <EndButton progressClick={progressClick} />
       </div>

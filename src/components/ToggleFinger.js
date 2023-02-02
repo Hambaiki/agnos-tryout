@@ -68,33 +68,24 @@ function ToggleFinger({ fingerUpdate }) {
             <button id='pip' className="absolute z-10 p-mp top-mt5 left-ml5 bg-green-400 rounded-3xl opacity-0 hover:opacity-0" onClick={handleFingerClick} />
           </div>
           <button id='all-finger' className="absolute z-10 p-p3 w-w2 top-bt2 left-bl2 bg-blue-700 rounded-3xl opacity-0 hover:opacity-0" onClick={handleFingerClick} />
-
-          {fingerPart[0].active && (
-            <div>
-              <img className='absolute top-0 left-0' src={require('./img/dip-highlight.png')} alt='dip' />
-              <img className='absolute top-0 left-0' src={require('./img/dip-active.png')} alt='dip-active' />
-            </div>
-          )}
-          {fingerPart[1].active && (
-            <div>
-              <img className='absolute top-0 left-0' src={require('./img/pip-highlight.png')} alt='pip' />
-              <img className='absolute top-0 left-0' src={require('./img/pip-active.png')} alt='pip-active' />
-            </div>
-          )}
-          {fingerPart[2].active && (
-            <div>
-              <img className='absolute top-0 left-0' src={require('./img/mcp-highlight.png')} alt='mcp' />
-              <img className='absolute top-0 left-0' src={require('./img/mcp-active.png')} alt='mcp-active' />
-            </div>
-          )}
-          {fingerPart[3].active && (
-            <div>
-              <img className='absolute top-0 left-0' src={require('./img/others-highlight.png')} alt='others' />
-              <img className='absolute top-0 left-0' src={require('./img/dip-highlight.png')} alt='dip' />
-              <img className='absolute top-0 left-0' src={require('./img/pip-highlight.png')} alt='pip' />
-              <img className='absolute top-0 left-0' src={require('./img/mcp-highlight.png')} alt='mcp' />
-            </div>
-          )}
+          <div className={`${(fingerPart[0].active) ? 'visible' : 'hidden'}`}>
+            <img className='absolute top-0 left-0' src={require('./img/dip-highlight.png')} alt='dip' />
+            <img className='absolute top-0 left-0' src={require('./img/dip-active.png')} alt='dip-active' />
+          </div>
+          <div className={`${(fingerPart[1].active) ? 'visible' : 'hidden'}`}>
+            <img className='absolute top-0 left-0' src={require('./img/pip-highlight.png')} alt='pip' />
+            <img className='absolute top-0 left-0' src={require('./img/pip-active.png')} alt='pip-active' />
+          </div>
+          <div className={`${(fingerPart[2].active) ? 'visible' : 'hidden'}`}>
+            <img className='absolute top-0 left-0' src={require('./img/mcp-highlight.png')} alt='mcp' />
+            <img className='absolute top-0 left-0' src={require('./img/mcp-active.png')} alt='mcp-active' />
+          </div>
+          <div className={`${(fingerPart[3].active) ? 'visible' : 'hidden'}`}>
+            <img className='absolute top-0 left-0' src={require('./img/others-highlight.png')} alt='others' />
+            <img className='absolute top-0 left-0' src={require('./img/dip-highlight.png')} alt='dip' />
+            <img className='absolute top-0 left-0' src={require('./img/pip-highlight.png')} alt='pip' />
+            <img className='absolute top-0 left-0' src={require('./img/mcp-highlight.png')} alt='mcp' />
+          </div>
         </div>
       </div>
     </div>

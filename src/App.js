@@ -41,6 +41,7 @@ function App() {
             { 'selected-finger': selectedFinger },
           ];
           localStorage.setItem('submission', JSON.stringify(res));
+          console.log('Stored:', JSON.stringify(res));
           break;
         }
       case 3:

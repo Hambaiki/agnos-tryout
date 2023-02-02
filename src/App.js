@@ -47,6 +47,7 @@ function App() {
         setCurrentStage(1);
         setSelectedAbs(null);
         setSelectedFinger(null);
+
         return;
       default:
         return;
@@ -54,7 +55,7 @@ function App() {
     setMsgToggle(false);
     setCurrentStage(currentStage + 1);
   }
-  
+
   function closeMsg() {
     setMsgToggle(false);
   }

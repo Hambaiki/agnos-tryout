@@ -8,7 +8,6 @@ function Ending() {
           ขอบคุณ
         </p>
       </div>
-
     </div>
   )
 }

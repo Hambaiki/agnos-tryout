@@ -3,7 +3,7 @@ import React from 'react'
 function EndButton({ progressClick }) {
   return (
     <div className='container w-3/5 m-auto mt-0 max-w-sm'>
-    <button className='
+      <button className='
       w-full 
       p-4 rounded-3xl 
       bg-gray-300 
@@ -14,10 +14,10 @@ function EndButton({ progressClick }) {
       hover:to-blue-800
       hover:text-white
       transition ease-in-out duration-50'
-      onClick={progressClick}>
-      ทำใหม่อีกครั้ง
-    </button>
-  </div>
+        onClick={progressClick}>
+        แก้ไขตัวเลือก
+      </button>
+    </div>
   )
 }
 

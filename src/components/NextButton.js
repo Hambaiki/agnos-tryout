@@ -3,7 +3,7 @@ import React from 'react'
 function NextButton({ progressClick }) {
   return (
     <div className='container w-3/5 m-auto mt-0 max-w-sm'>
-    <button className='
+      <button className='
       w-full 
       p-4 rounded-3xl 
       bg-gray-300 
@@ -14,10 +14,10 @@ function NextButton({ progressClick }) {
       hover:to-blue-800
       hover:text-white
       transition ease-in-out duration-50'
-      onClick={progressClick}>
-      ต่อไป
-    </button>
-  </div>
+        onClick={progressClick}>
+        ต่อไป
+      </button>
+    </div>
   )
 }
 

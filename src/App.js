@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import ToggleAbs from './components/ToggleAbs';
 import ToggleFinger from './components/ToggleFinger';
+import Ending from './components/Ending';
 
 function App() {
 
@@ -31,15 +32,22 @@ function App() {
           setMsgToggle(true);
           return;
         } else {
+          console.log('reached the end');
+          const res = [
+            { 'selected-abs': selectedAbs },
+            { 'selected-finger': selectedFinger },
+          ];
+          localStorage.setItem('submission', JSON.stringify(res));
           break;
         }
       case 3:
         setCurrentStage(1);
+        setSelectedAbs(null);
+        setSelectedFinger(null);
         return;
       default:
         return;
     }
-
     setMsgToggle(false);
     setCurrentStage(currentStage + 1);
   }
@@ -50,60 +58,20 @@ function App() {
   const [msgToggle, setMsgToggle] = useState(false);
 
   return (
-    <div className="flex flex-col h-screen font-face-kn bg-slate-50">
+    <div className='flex flex-col h-screen font-face-kn bg-slate-50'>
       {(msgToggle) && (
-        <p className="flex items-center justify-center mt-4 text-sm text-red-500">
+        <p className="text-center mt-4 text-sm text-red-500">
           จำเป็นต้องเลือกอย่างน้อยหนึ่งตัวเลือก
         </p>
       )}
       {(currentStage === 1) && (
-        <ToggleAbs absUpdate={absUpdate} />
+        <ToggleAbs absUpdate={absUpdate} progressClick={progressClick} />
       )}
       {(currentStage === 2) && (
-        <ToggleFinger fingerUpdate={fingerUpdate} />
-      )}
-      {(currentStage !== 3) && (
-        <div className='container w-3/5 m-auto mt-0 max-w-sm'>
-          <button className='
-          w-full 
-          p-4 rounded-3xl 
-          bg-gray-300 
-          text-gray-500 
-          text-lg 
-          hover:bg-gradient-to-r 
-          hover:from-sky-400 
-          hover:to-blue-800
-          hover:text-white
-          transition ease-in-out duration-50'
-            onClick={progressClick}>
-            ต่อไป
-          </button>
-        </div>
+        <ToggleFinger fingerUpdate={fingerUpdate} progressClick={progressClick} />
       )}
       {(currentStage === 3) && (
-        <div className="container w-3/5 m-auto mb-4 max-w-sm shadow-xl rounded-3xl bg-white">
-          <p className="p-8 text-center text-5xl text-slate-500">
-            ขอบคุณ
-          </p>
-        </div>
-      )}
-      {(currentStage === 3) && (
-        <div className='container w-3/5 m-auto mt-0 max-w-sm'>
-          <button className='
-          w-full 
-          p-4 rounded-3xl 
-          bg-gray-300 
-          text-gray-500 
-          text-lg 
-          hover:bg-gradient-to-r 
-          hover:from-sky-400 
-          hover:to-blue-800
-          hover:text-white
-          transition ease-in-out duration-50'
-            onClick={progressClick}>
-            ทำใหม่อีกครั้ง
-          </button>
-        </div>
+        <Ending progressClick={progressClick} />
       )}
     </div>
   );

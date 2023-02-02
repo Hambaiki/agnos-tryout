@@ -1,6 +1,6 @@
 # An Interactive Questionnaire Created With React and Tailwind CSS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A basic questionnaire with 2 questions.
 
 ## How to Deploy on Local
 

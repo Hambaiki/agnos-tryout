@@ -10,10 +10,12 @@ function App() {
 
   function absUpdate(part) {
     setSelectedAbs(part);
+    console.log('selected abs:', part);
   }
 
   function fingerUpdate(part) {
     setSelectedFinger(part);
+    console.log('selected finger:', part);
   }
 
   function progressClick() {
@@ -44,15 +46,15 @@ function App() {
       { (currentStage === 2) && (
         <ToggleFinger fingerUpdate={ fingerUpdate }/>
       )}
+      { (currentStage === 1) && (
+        <ToggleAbs absUpdate={ absUpdate } />
+      )}
       { (currentStage === 3) && (
         <div className="container w-3/5 m-auto max-w-sm shadow-xl rounded-3xl">
           <p className="m-4 mt-8 p-8 text-center text-lg text-slate-500">
             ขอบคุณ
           </p>
         </div>
-      )}
-      { (currentStage === 1) && (
-        <ToggleAbs absUpdate={ absUpdate } />
       )}
       { (currentStage !== 3) && (
         <div className='container w-3/5 m-auto mt-0 max-w-sm'>
